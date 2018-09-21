@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="team.team_tree">
+      <field name="name">Team Table</field>
+      <field name="model">team.team</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="address"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="team.team_form">
+        <field name="name">Team Form</field>
+        <field name="model">team.team</field>
+        <field name="arch" type="xml">
+              <form string="Team">
+                <group>
+                  <field name="name"/>
+                  <field name="address"/>
+                  <field name="description"/>
+                  <field name="logo"/>
+                </group>
+              </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="team.team_action_window">
+      <field name="name">Team</field>
+      <field name="res_model">team.team</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Team" id="team.team" parent="team.menu_root" action="team.team_action_window" sequence="3"/>
+
+  </data>
+</odoo>

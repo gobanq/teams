@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="team.coach_tree">
+      <field name="name">Coach Table</field>
+      <field name="model">team.coach</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="contact"/>
+          <field name="address"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="team.coach_form">
+        <field name="name">Coach Form</field>
+        <field name="model">team.coach</field>
+        <field name="arch" type="xml">
+              <form string="Coach">
+                <group>
+                  <field name="name"/>
+                  <field name="contact"/>
+                  <field name="address"/>
+                </group>
+              </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="team.coach_action_window">
+      <field name="name">Coach</field>
+      <field name="res_model">team.coach</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Coach" id="team.coach" parent="team.menu_root" action="team.coach_action_window" sequence="2"/>
+
+  </data>
+</odoo>
