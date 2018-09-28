@@ -41,7 +41,7 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Team Management" id="team.menu_root"/>
+    <menuitem name="Team Management" id="team.menu_root" groups="base.group_user"/>
     <menuitem name="Player" id="team.player" parent="team.menu_root" action="team.player_action_window" sequence="1"/>
 
   </data>
