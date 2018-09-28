@@ -18,11 +18,19 @@
         <field name="model">team.player</field>
         <field name="arch" type="xml">
               <form string="Player">
-                <group>
-                  <field name="name"/>
-                  <field name="contact"/>
-                  <field name="address"/>
-                </group>
+                <sheet>
+                  <field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image_medium"}'/>
+                  <div class="oe_title">
+                      <label for="name" class="oe_edit_only"/>
+                      <h1>
+                          <field name="name" placeholder="Player's Name" required="True"/>
+                      </h1>
+                  </div>
+                  <group>
+                    <field name="contact"/>
+                    <field name="address"/>
+                  </group>
+                </sheet>
               </form>
         </field>
     </record>

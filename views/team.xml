@@ -18,12 +18,41 @@
         <field name="model">team.team</field>
         <field name="arch" type="xml">
               <form string="Team">
-                <group>
-                  <field name="name"/>
-                  <field name="address"/>
-                  <field name="description"/>
-                  <field name="logo"/>
-                </group>
+                <sheet>
+                  <field name="logo" widget='image' class="oe_avatar" options='{"preview_image":"image_medium"}'/>
+                  <div class="oe_title">
+                      <label for="name" class="oe_edit_only"/>
+                      <h1>
+                          <field name="name" placeholder="Team's Name" required="True"/>
+                      </h1>
+                  </div>
+                  <group>
+                    <field name="address"/>
+                    <field name="description"/>
+                  </group>
+                  <notebook>
+                    <page name="public" string="Public Info">
+                        <field name='player_line'>
+                            <tree editable='buttom'>
+                                <field name="player_id" required="1"/>
+                                <field name="date_in"/>
+                                <field name="date_out"/>
+                                <field name="position"/>
+                                <field name="number"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="public" string="Coach">
+                        <field name='coach_line'>
+                            <tree editable='buttom'>
+                                <field name="coach_id" required="1"/>
+                                <field name="date_in"/>
+                                <field name="date_out"/>
+                            </tree>
+                        </field>
+                    </page>
+                  </notebook>
+                </sheet>
               </form>
         </field>
     </record>
